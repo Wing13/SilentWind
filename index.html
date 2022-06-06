@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Silent Wind</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/silentwind.json");
-      
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/silentwind.json", {onProgress: UnityProgress});
       vkBridge.send('VKWebAppInit');
-      
       window.showAd = function () {vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
                                    vkBridge.send("VKWebAppShowNativeAds",  {ad_format:"interstitial"})
                                                                            .then(data => console.log(data.result))
@@ -18,6 +19,13 @@
     </script>
   </head>
   <body>
-    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Silent Wind</div>
+      </div>
+    </div>
   </body>
 </html>
