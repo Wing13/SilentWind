@@ -1,0 +1,11 @@
+{
+"companyName": "Wing13's Games",
+"productName": "Silent Wind",
+"dataUrl": "silentwind.data.unityweb",
+"asmCodeUrl": "silentwind.asm.code.unityweb",
+"asmMemoryUrl": "silentwind.asm.memory.unityweb",
+"asmFrameworkUrl": "silentwind.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
